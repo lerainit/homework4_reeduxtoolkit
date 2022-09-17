@@ -1,26 +1,16 @@
-import React,{useEffect} from 'react'
-import Card from '../card/productCard'
+import React from 'react'
+import Card from '../../componentns/card/productCard'
 import { useSelector } from 'react-redux'
 
-import { useDispatch } from 'react-redux'
-import { fetchProducts } from '../../store/slices/productSlice'
+
+
 
 
 
 const ProductPage = () =>{
-     const dispatch = useDispatch()
+   
 const products = useSelector(store => store.products.value)
-//useEffect(() => {
- 
-   //  dispatch(fetchProducts())
-   
-       
-   
-    
-     
-   
-     
-    // }, [])
+
 
 return(
 <>

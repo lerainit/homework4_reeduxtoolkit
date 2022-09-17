@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import CartItem from '../cartitem/cartItem'
+import CartItem from '../../componentns/cartitem/cartItem'
 
 const CartPage = (props) =>{
 
     const addCart = useSelector(store =>store.Cart.value)
-    console.log(addCart)
+  
 return(
 
 <>

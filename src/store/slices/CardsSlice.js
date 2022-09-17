@@ -42,8 +42,5 @@ addCardsArr.splice(addCardsArr[action.payload.index],1)
 )
 
 export const { setCards,addCart,deleteCard} =cardsSlice.actions
-const setCardsArr = () => async (dispatch) =>{
-    dispatch(setCards())
-}
- export {setCardsArr}
+
 export default cardsSlice.reducer

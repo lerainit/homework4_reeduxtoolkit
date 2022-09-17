@@ -1,5 +1,5 @@
 import React from 'react'
-import FavItem from '../favitem/FavItem'
+import FavItem from '../../componentns/favitem/FavItem'
 import { useSelector } from 'react-redux'
 
 const FavoritesPage = (props) =>{
@@ -7,11 +7,9 @@ const FavoritesPage = (props) =>{
 
 return(
   
-   
-    
     <>
 
-{addFavorites.map(({id,name,price,art,url},index) =><FavItem key={id}  id ={id}  name= {name} price ={price} art ={art} url={url} ></FavItem>)}
+{addFavorites.map(({id,name,price,art,url},index) =><FavItem key={id}  id ={id}  name= {name} fill={'#FFFF00'} price ={price} art ={art} url={url} ></FavItem>)}
 
 </>   
     
