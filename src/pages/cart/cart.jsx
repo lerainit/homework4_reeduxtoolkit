@@ -6,7 +6,10 @@ import CartItem from '../../componentns/cartitem/cartItem'
 const CartPage = (props) =>{
 
     const addCart = useSelector(store =>store.Cart.value)
-  
+    if(addCart.length === 0 ){
+        return(<> <h1>No items have been added</h1></>)
+    }
+    else{ 
 return(
 
 <>
@@ -21,7 +24,7 @@ return(
 
 )
 
-
+    }
 
 
 

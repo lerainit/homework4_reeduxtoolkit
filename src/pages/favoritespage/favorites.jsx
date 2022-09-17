@@ -4,7 +4,12 @@ import { useSelector } from 'react-redux'
 
 const FavoritesPage = (props) =>{
     const addFavorites = useSelector(store =>store.addFavorites.value)
-
+    if(addFavorites.length === 0){
+        return(<>
+       <h1>No items have been added</h1> 
+        </>)
+    }
+    else{
 return(
   
     <>
@@ -17,7 +22,7 @@ return(
    
 )
 
-
+    }
 }
 
 export default FavoritesPage
