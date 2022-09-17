@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const cardIdSlice = createSlice({
     name:'cardIndex',
     initialState:{
-        value: null },
+        value: null,
+    valueId:null },
         reducers:{
 
             SET_VALUE_INDEX:(state,action) =>{
@@ -13,6 +14,9 @@ const cardIdSlice = createSlice({
   state.value = action.payload
 
 },
+SET_VALUE_ID:(state,action) =>{
+    state.valueId = action.payload
+}
 
 
         }
@@ -23,7 +27,7 @@ const cardIdSlice = createSlice({
     }
 )
 
-export const {  SET_VALUE_INDEX} = cardIdSlice.actions
+export const {  SET_VALUE_INDEX,SET_VALUE_ID} = cardIdSlice.actions
 
 
 export default cardIdSlice.reducer

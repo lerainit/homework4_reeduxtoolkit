@@ -23,12 +23,21 @@ addCart:(state,action) =>{
 
 },
 deleteCard:(state,action) =>{
-    let addCardsArr = state.value
+   // let addCardsArr = state.value
    // let newAddCardsArr = addCardsArr.filter((el, index) => action.payload.index !== index)
-addCardsArr.splice(addCardsArr[action.payload.index],1)
-    localStorage.setItem('addCards', JSON.stringify(addCardsArr))
-  
-    state.value = addCardsArr
+//addCardsArr.splice(addCardsArr[action.payload.index],1)
+
+let stateValue = state.value
+        let newValue = stateValue.filter(el => el.id !== action.payload.id)
+console.log(action.payload.id)
+     
+      
+
+    localStorage.setItem('addCards', JSON.stringify(newValue))
+
+
+     state.value =newValue
+  //  state.value = addCardsArr
 
 }
 

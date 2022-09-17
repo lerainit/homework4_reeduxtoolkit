@@ -2,14 +2,14 @@ import React from 'react'
 import styles from './modal.module.scss'
 import { useDispatch,useSelector } from 'react-redux'
 import { closeDeleteModal } from '../../store/slices/ModalSlice'
-import { deleteCard } from '../../store/slices/CardsSlice'
+import { deleteCard, setCards } from '../../store/slices/CardsSlice'
 
 
 const  DeleteModal = (props) => {
   
    const dispatch = useDispatch()
    const modalText = useSelector(store => store.modalText.value);
-   const index = useSelector(store =>store.cardIndex.value)
+   const id = useSelector(store =>store.cardIndex.valueId)
  
 
 return(
@@ -23,7 +23,8 @@ return(
 
 <p>{ modalText}</p>
 <button className={styles.modal_btn} onClick ={()=>{
-  dispatch(deleteCard(index))
+  dispatch(deleteCard({id:id}))
+  dispatch(setCards(JSON.parse(localStorage.getItem('addCards'))))
   dispatch(closeDeleteModal())}} >delete from Cart</button>
 </div>
 </div>
